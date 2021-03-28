@@ -33,9 +33,15 @@ namespace sdds {
 
 		// TODO: Overload the += operator with a smart pointer
 		//       as a second operand.
+		void operator+=(const std::unique_ptr<T>& ptr) {
+			list.push_back(*ptr);
+		}
 
 		// TODO: Overload the += operator with a raw pointer
 		//       as a second operand.
+		void operator+=(const T* ptr) {
+			lsit.push_back(*ptr);
+		}
 
 		void display(std::ostream& os) const {
             os << std::fixed << std::setprecision(2);
