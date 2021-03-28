@@ -87,8 +87,7 @@ namespace sdds {
 			ValidateException(std::string message) : message(message) {}
 			~ValidateException() throw() {}
 			const char* what() const throw() { return message.c_str(); }
-		}
-
+		};
 		inline void validate() {
 			std::string message = "*** Negative prices are invalid ***";
 			if (this->m_price < 0) throw message;
